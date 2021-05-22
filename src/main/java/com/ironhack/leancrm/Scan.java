@@ -68,6 +68,45 @@ public class Scan {
                         }
                         break;
 
+                    case "LOOKUP LEAD ID":
+                        System.out.println(" --- Please type in the Lead ID to get the corresponding Information --- ");
+                        System.out.println(("\n" + (char) 27 + "\u001b[47m" + "----Do you want to do anything else in the CRM?----" + "\033[0m" + "\n"));
+
+                        System.out.println("Do something else in the Program: "+ (char)27 + "\033[1m"+ "(1)"+ "\033[0m");
+                        System.out.println("Leave CRM: "+ (char)27 + "\033[1m"+ "(2)"+ "\033[0m");
+
+
+                        b = input.nextLine();
+                        switch (b) {
+                            case "1":
+                                System.out.println("-------------");
+                                break;
+                            case "2":
+                                System.out.println("\n" + (char) 27 + "[31m" + "\u001b[1m"+ "__________ Bye bye and thanks for updating the CRM __________"+ "\033[0m" +"\n");
+                                System.exit(0);
+                        }
+                        break;
+
+                    case "CONVERT ID":
+                        System.out.println(" --- Please type in the ID to convert the corresponding Lead into Opportunity --- ");
+
+                        System.out.println(("\n" + (char) 27 + "\u001b[47m" + "----Do you want to do anything else in the CRM?----" + "\033[0m" + "\n"));
+
+                        System.out.println("Do something else in the Program: "+ (char)27 + "\033[1m"+ "(1)"+ "\033[0m");
+                        System.out.println("Leave CRM: "+ (char)27 + "\033[1m"+ "(2)"+ "\033[0m");
+
+
+                        b = input.nextLine();
+                        switch (b) {
+                            case "1":
+                                System.out.println("-------------");
+                                break;
+                            case "2":
+                                System.out.println("\n" + (char) 27 + "[31m" + "\u001b[1m"+ "__________ Bye bye and thanks for updating the CRM __________"+ "\033[0m" +"\n");
+                                System.exit(0);
+                        }
+                        break;
+
                     case "ESC CRM":
                         System.out.println("\n" + (char) 27 + "[31m" + "\u001b[1m"+ "__________ Bye bye and thanks for updating the CRM __________"+ "\033[0m" +"\n");
                         System.exit(0);
