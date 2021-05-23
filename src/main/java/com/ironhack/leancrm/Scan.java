@@ -1,5 +1,6 @@
 package com.ironhack.leancrm;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Scan {
@@ -63,7 +64,13 @@ public class Scan {
                         break;
                     case "SHOW LEADS":
                         System.out.println(" --- All the Leads in our System: --- ");
-
+                        try {
+                            loading();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
                         System.out.println(commandLeave + (char) 27 + "\033[1m" + "(2)" + "\033[0m");
@@ -81,7 +88,13 @@ public class Scan {
 
                     case "LOOKUP LEAD ID":
                         System.out.println(" --- Please type in the Lead ID to get the corresponding Information --- ");
-
+                        try {
+                            loading();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
                         System.out.println(commandLeave + (char) 27 + "\033[1m" + "(2)" + "\033[0m");
@@ -170,6 +183,16 @@ public class Scan {
             e.printStackTrace();
         }
         System.exit(0);
+    }
+
+    public static void loading() throws InterruptedException, IOException {
+        for (int x =0 ; x <= 100 ; x++) {
+            System.out.print((char) 27 + "[31m");
+            String data = "\r" + " >>>>>>> Loading "+ x + " %";
+            System.out.write(data.getBytes());
+            Thread.sleep(9);
+        }
+        System.out.println("\033[0m" + " ");
     }
 }
 
