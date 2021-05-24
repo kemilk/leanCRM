@@ -1,4 +1,4 @@
-package com.ironhack.leancrm.common;
+package com.ironhack.leancrm;
 
 import java.util.HashMap;
 

@@ -1,7 +1,4 @@
-package com.ironhack.leancrm.common;
-
-import com.ironhack.leancrm.Product;
-import com.ironhack.leancrm.Status;
+package com.ironhack.leancrm;
 
 public class Opportunity {
     private Integer id;
