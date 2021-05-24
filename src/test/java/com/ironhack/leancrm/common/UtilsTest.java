@@ -11,7 +11,7 @@ class UtilsTest {
 
     @Test
     void getNextIdTest() {
-        HashMap<Integer,Object> testMap=new HashMap<>();
+        HashMap<Integer,Integer> testMap=new HashMap<>();
         testMap.put(1, 50);
         testMap.put(32, 60);
         testMap.put(3, 30);
@@ -30,5 +30,10 @@ class UtilsTest {
         //add new HashMap entry with manually chosen key
         testMap.put(678, 1);
         assertEquals(679, Utils.getNextId(testMap));
+
+        //test with empty HashMap
+        HashMap<Integer,Object> emptyHashMap=new HashMap<>();
+        assertEquals(1, Utils.getNextId(emptyHashMap));
+
     }
 }
