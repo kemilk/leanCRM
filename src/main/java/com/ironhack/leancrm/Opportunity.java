@@ -1,17 +1,24 @@
 package com.ironhack.leancrm;
 
+import com.ironhack.leancrm.common.Utils;
+
+import java.util.HashMap;
+
 public class Opportunity {
     private Integer id;
     private Integer quantity;
     private Contact decisionMaker;
     private Status status;
     private Product product;
+    //class var for having an overview of all Opportunity objects
+    public static HashMap<Integer, Opportunity> opportunityMap = new HashMap<>();
 
 
     // Constructer
 
-    public Opportunity(Integer id, Integer quantity, Contact decisionMaker, Status status, Product product) {
+    public Opportunity(Integer quantity, Contact decisionMaker, Status status, Product product) {
         setId(id);
+        opportunityMap.put(this.getId(), this);
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
         setStatus(status);
@@ -23,8 +30,8 @@ public class Opportunity {
     public Integer getId() {
         return id;
     }
-    public void setId(Lead lead) {
-        this.id = id;
+    public void setId(Integer id) {
+        this.id = Utils.getNextId(opportunityMap);
     }
 
     public Integer getQuantity() {
