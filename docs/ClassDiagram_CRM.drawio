@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-05-25T11:59:24.228Z" agent="5.0 (Macintosh)" etag="HCgYM8bsMyOt1SXOtvi5" version="14.7.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-25T12:12:38.654Z" agent="5.0 (Macintosh)" etag="oBe3HRYlPw80b4EJSxJ7" version="14.7.0" type="github">
   <diagram id="zRnogB2254eo7cq1ihcv" name="Page-1">
     <mxGraphModel dx="670" dy="1972" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -58,7 +58,7 @@
         <mxCell id="IQnJFdTCfPWkzdvYTakq-46" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-44" vertex="1">
           <mxGeometry y="160" width="287" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="IQnJFdTCfPWkzdvYTakq-47" value="+ addAccount(Integer, Account)&#xa;+ getAccountMap(): HashMap&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-44" vertex="1">
+        <mxCell id="IQnJFdTCfPWkzdvYTakq-47" value="+ addAccount(Integer, Account)&#xa;+ getAccountMap(): HashMap&#xa;+ addOpportunity(Opportunity)&#xa;+ addContact(Contact)&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-44" vertex="1">
           <mxGeometry y="168" width="287" height="66" as="geometry" />
         </mxCell>
         <mxCell id="IQnJFdTCfPWkzdvYTakq-48" value="Enum Industry&#xa;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#6a00ff;strokeColor=#3700CC;swimlaneFillColor=#CCE5FF;fontColor=#ffffff;" parent="1" vertex="1">
