@@ -1,13 +1,14 @@
 package com.ironhack.leancrm;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Scan {
 
     public static final String commandStart = "What do you want to do? Please type in one of the following commands:";
-    public static final String commandEscCrm = "__________ Bye bye and thanks for updating the CRM __________";
-    public static final String commandNextStep = "---- Do you want to do anything else in the CRM? Please type in the corresponding Number ----";
+    public static final String commandEscCrm = "__________ Bye bye and thanks for using Tiefflieger-CRM __________";
+    public static final String commandNextStep = ">>> Do you want to do anything else in the CRM? Please type in the corresponding Number <<<";
     public static final String commandGoOn = "Do something else in the Program: ";
     public static final String commandLeave = "Leave CRM: ";
     public static final String commandClose = "Please type in the ID of the Opportunity you want to close";
@@ -38,15 +39,35 @@ public class Scan {
                 switch (i) {
                     case "NEW LEAD":
 
+                        ArrayList<String> testListLead = new ArrayList<String>();
+
+                        System.out.println("\n" + " >>> Please confirm every input by pressing Enter <<< " + "\n");
+
                         System.out.println("Please type in the name of the Lead: ");
+                        String s = input.nextLine();
+                        testListLead.add(s);
                         System.out.println("Please type in the phone Number of the Lead: ");
+                        s = input.nextLine();
+                        testListLead.add(s);
                         System.out.println("Please type in the E-Mail address of the Lead: ");
+                        s = input.nextLine();
+                        testListLead.add(s);
                         System.out.println("Please type in the Company Name of the Lead: ");
+                        s = input.nextLine();
+                        testListLead.add(s);
+
+//                        System.out.println("Please type in..." +"\n" + "...the name of the Lead" +"\n" + "...the phone number of the Lead" + "\n" + "...the E-Mail address of the Lead" + "\n" + "...the Company Name of the Lead."+"\n"+"\n"+">>> Please confirm every single input by pressing Enter <<<");
+
+//                        while (input.hasNextLine()){
+//                            String s = input.nextLine();
+//                            testListLead.add(s);
+//                            if (s.equals("")) break;
+//                        }
+
+                        System.out.println(testListLead);
 
 
-                        //extra scanner-method for user Input?
-
-                        System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
+                        System.out.println(("\n" + (char) 27 + "[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
                         System.out.println(commandLeave + (char) 27 + "\033[1m" + "(2)" + "\033[0m");
 
@@ -86,7 +107,7 @@ public class Scan {
                         }
                         break;
 
-                    case "LOOKUP LEAD ID":
+                    case "LOOKUP LEAD ID":      //"ID" has to be the corresponding Lead ID
                         System.out.println(" --- Please type in the Lead ID to get the corresponding Information --- ");
                         try {
                             loading();
@@ -110,7 +131,7 @@ public class Scan {
                         }
                         break;
 
-                    case "CONVERT ID":
+                    case "CONVERT ID":  //"ID" has to be the corresponding Lead ID
                         System.out.println(" --- Please type in the ID to convert the corresponding Lead into Opportunity --- ");
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
@@ -194,6 +215,7 @@ public class Scan {
         }
         System.out.println("\033[0m" + " ");
     }
+
 }
 
 
