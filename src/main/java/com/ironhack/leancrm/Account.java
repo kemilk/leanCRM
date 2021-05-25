@@ -12,14 +12,24 @@ public class Account {
     private HashSet<Contact> contactSet;
     private HashSet<Opportunity> opportunitySet;
 
-    private static HashSet<Account> accountSet;
+    private static HashSet<Account> accountSet = new HashSet<Account>();
 
     public static void addAccount(Integer id, Account account) {
-        accountSet.add(account);
+            accountSet.add(account);
+    }
+
+    public static void listAccounts() {
+        for (Account selected : Account.accountSet) {
+            System.out.println(selected);
+        }
     }
 
     public static HashSet<Account> getAccountSet() {
         return accountSet;
+    }
+
+    protected static void clearAccountSet() {
+        Account.accountSet.clear();
     }
 
     public Account(Integer id, Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity) {
@@ -28,7 +38,10 @@ public class Account {
         this.employeeCount = employeeCount;
         this.companyName = companyName;
         this.city = city;
+        this.country = country;
+        this.contactSet = new HashSet<Contact>();
         this.addContact(contact);
+        this.opportunitySet = new HashSet<Opportunity>();
         this.addOpportunity(opportunity);
         addAccount(id, this);
     }
