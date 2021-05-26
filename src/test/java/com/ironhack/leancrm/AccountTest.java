@@ -20,12 +20,12 @@ class AccountTest {
 
     @BeforeEach
     void setUp() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de");
-        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de");
-        testOpportunity1 = new Opportunity(10, testContact1, Status.OPEN, Product.FLATBED);
-        testOpportunity2 = new Opportunity(20, testContact2, Status.OPEN, Product.HYBRID);
-        testAccount1 = new Account(1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany", testContact1, testOpportunity1);
-        testAccount2 = new Account(2, Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany", testContact2, testOpportunity2);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de", 2, Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany",20, Status.OPEN, Product.HYBRID);
+        testAccount1 = testContact1.getAccount();
+        testAccount2 = testContact2.getAccount();
+        testOpportunity1 = testContact1.getOpportunityMap().get(0);
+        testOpportunity1 = testContact1.getOpportunityMap().get(1);
     }
 
     @AfterEach

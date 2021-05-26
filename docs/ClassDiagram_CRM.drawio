@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-26T05:56:13.370Z" agent="5.0 (Macintosh)" etag="xgR1V9NbPrDiNmIuc6wg" version="14.7.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-26T06:47:39.442Z" agent="5.0 (Macintosh)" etag="HlHjJ27xyaZHM5sLxJXL" version="14.7.0" type="github">
   <diagram id="zRnogB2254eo7cq1ihcv" name="Page-1">
-    <mxGraphModel dx="700" dy="1972" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="805" dy="1972" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,16 +17,16 @@
           <mxGeometry y="95" width="160" height="8" as="geometry" />
         </mxCell>
         <mxCell id="IQnJFdTCfPWkzdvYTakq-12" value="Contact" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="362" y="258" width="205" height="209" as="geometry" />
+          <mxGeometry x="362" y="258" width="205" height="242" as="geometry" />
         </mxCell>
-        <mxCell id="IQnJFdTCfPWkzdvYTakq-13" value="+ id: Integer&#xa;+ name: String&#xa;+ phoneNumber: String&#xa;+ email: String+ account: Account&#xa;+ opportunities: HashMap&lt;Integer,&#xa;Opportunity&gt;&#xa;+ contactMap: HashMap&lt;Integer,&#xa;Contact&gt;&#xa;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-12" vertex="1">
-          <mxGeometry y="26" width="205" height="113" as="geometry" />
+        <mxCell id="IQnJFdTCfPWkzdvYTakq-13" value="+ id: Integer&#xa;+ name: String&#xa;+ phoneNumber: String&#xa;+ email: String&#xa;+ account: Account&#xa;+ opportunitityMap: HashMap&lt;Integer,Opportunity&gt;&#xa;+ contactMap: HashMap&lt;Integer,&#xa;Contact&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-12" vertex="1">
+          <mxGeometry y="26" width="205" height="146" as="geometry" />
         </mxCell>
         <mxCell id="IQnJFdTCfPWkzdvYTakq-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-12" vertex="1">
-          <mxGeometry y="139" width="205" height="8" as="geometry" />
+          <mxGeometry y="172" width="205" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="IQnJFdTCfPWkzdvYTakq-15" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-12" vertex="1">
-          <mxGeometry y="147" width="205" height="62" as="geometry" />
+        <mxCell id="IQnJFdTCfPWkzdvYTakq-15" value="+ addOpportunity(Integer, Opportunity)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="IQnJFdTCfPWkzdvYTakq-12" vertex="1">
+          <mxGeometry y="180" width="205" height="62" as="geometry" />
         </mxCell>
         <mxCell id="IQnJFdTCfPWkzdvYTakq-24" value="Main" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="919" y="-60" width="160" height="173" as="geometry" />
