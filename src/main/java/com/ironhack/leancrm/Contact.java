@@ -16,7 +16,7 @@ public class Contact {
     //class var for having an overview of all Contact objects
     public static HashMap<Integer, Contact> contactMap = new HashMap<>();
 
-    //Contructor if Account and Opportunity are known
+    //Constructor if Account and Opportunity are known
     public Contact(String name, String phoneNumber, String email, Account account, Integer opportunityID, Opportunity opportunity) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -25,7 +25,7 @@ public class Contact {
         this.opportunityMap.put(opportunityID, opportunity);
         this.id = Utils.getNextId(contactMap);
     }
-    //Contructor if Account is known and Opportunity is to create
+    //Constructor if Account is known and Opportunity is to create
     public Contact(String name, String phoneNumber, String email, Account account, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -35,7 +35,7 @@ public class Contact {
         this.opportunityMap.put(opportunity.getId(), opportunity);
         this.id = Utils.getNextId(contactMap);
     }
-    //Contructor if Account is to create and Opportunity is known
+    //Constructor if Account is to create and Opportunity is known
     public Contact(String name, String phoneNumber, String email, Integer opportunityID, Opportunity opportunity, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -46,7 +46,7 @@ public class Contact {
         contactMap.put(this.id,this);
     }
 
-    //Contructor if Account and Opportunity are to create
+    //Constructor if Account and Opportunity are to create
     public Contact(String name, String phoneNumber, String email, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct) {
         this.name = name;
         this.phoneNumber = phoneNumber;
