@@ -49,14 +49,14 @@ public class Lead {
         //Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
         //Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
 
-        Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);
+      //  Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);
 
         //industry, number of employees, city, and country
         //Industry accInfoIndustry = Scan.getInfoForAccountIndustry();
         //Integer accInfoEmployees = Scan.getInfoForAccountEmployees();
         //String accInfoCity = Scan.getInfoForAccountCity();
         //String accInfoCountry = Scan.getInfoForAccountCountry();
-        Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
+      //  Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
 
         //we have to remove the lead and to make everything clean again
         deleteLead(leadToConvert);
@@ -69,7 +69,8 @@ public class Lead {
     }
 
     private static Contact createContact(Lead leadToConvert){
-        return new Contact(leadToConvert.getName(),leadToConvert.getPhoneNumber(),leadToConvert.getEmail());
+      //  return new Contact(leadToConvert.getName(),leadToConvert.getPhoneNumber(),leadToConvert.getEmail());
+        return null;
     }
 //(Integer id, Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity)
     private static Account createAccount(Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity){
