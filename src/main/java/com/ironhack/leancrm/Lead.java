@@ -49,18 +49,35 @@ public class Lead {
         //Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
         //Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
 
-        //createOpportunity(Integer quantity, Product product)
+        Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);
 
+        //industry, number of employees, city, and country
+        //Industry accInfoIndustry = Scan.getInfoForAccountIndustry();
+        //Integer accInfoEmployees = Scan.getInfoForAccountEmployees();
+        //String accInfoCity = Scan.getInfoForAccountCity();
+        //String accInfoCountry = Scan.getInfoForAccountCountry();
+        Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
+
+        //we have to remove the lead and to make everything clean again
+        deleteLead(leadToConvert);
 
     }
 
-    private static Opportunity createOpportunity(Integer quantity, Product product, Contact contact){
 
-        return null;
+    private static Opportunity createOpportunity(Integer quantity, Contact contact,Product product ){
+        return new Opportunity(quantity, contact, Status.OPEN, product);
     }
 
     private static Contact createContact(Lead leadToConvert){
         return new Contact(leadToConvert.getName(),leadToConvert.getPhoneNumber(),leadToConvert.getEmail());
+    }
+//(Integer id, Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity)
+    private static Account createAccount(Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity){
+        return new Account(industry, employeeCount, companyName, city, country, contact, opportunity);
+    }
+
+    private static void deleteLead(Lead leadToDelete) {
+        leadMap.remove(leadToDelete.id);
     }
 
     //setter and getter
