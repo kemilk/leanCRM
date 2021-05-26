@@ -1,5 +1,6 @@
 package com.ironhack.leancrm;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Account {
@@ -12,9 +13,11 @@ public class Account {
     private HashSet<Contact> contactSet;
     private HashSet<Opportunity> opportunitySet;
 
+    public static HashMap<Integer, Contact> contactMap = new HashMap<>();
+
     private static HashSet<Account> accountSet = new HashSet<Account>();
 
-    public static void addAccount(Integer id, Account account) {
+    public static void addAccount(Account account) {
             accountSet.add(account);
     }
 
@@ -43,7 +46,7 @@ public class Account {
         this.addContact(contact);
         this.opportunitySet = new HashSet<Opportunity>();
         this.addOpportunity(opportunity);
-        addAccount(id, this);
+        addAccount(this);
     }
 
     public Integer getId() {
