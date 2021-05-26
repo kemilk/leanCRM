@@ -40,6 +40,29 @@ public class Lead {
         return leadMap.get(leadId);
     }
 
+    public static void convertToOpportunity(Integer leadId) {
+        Lead leadToConvert = lookUpLead(leadId);
+
+        // create new contact from lead info
+        Contact createdContact = createContact(leadToConvert);
+
+        //Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
+        //Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
+
+        //createOpportunity(Integer quantity, Product product)
+
+
+    }
+
+    private static Opportunity createOpportunity(Integer quantity, Product product, Contact contact){
+
+        return null;
+    }
+
+    private static Contact createContact(Lead leadToConvert){
+        return new Contact(leadToConvert.getName(),leadToConvert.getPhoneNumber(),leadToConvert.getEmail());
+    }
+
     //setter and getter
 
     public String getName() {

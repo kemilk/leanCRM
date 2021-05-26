@@ -17,7 +17,6 @@ class LeadTests {
     @Test
     @Description("this test checks the addNewLead method + the showLeads method")
     void showLeadsTest() {
-        //the addNewLead method is called directly within the Lead constructor!
         assertEquals(2,Lead.showLeads().size());
         assertEquals("+49 172 56 3457 88", Lead.showLeads().get(0).getPhoneNumber());
         assertEquals("sandra.leopold@nirvans.de", Lead.showLeads().get(1).getEmail());

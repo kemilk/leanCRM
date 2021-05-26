@@ -23,5 +23,6 @@ public class Contact {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.id = Utils.getNextId(contactMap);
+        contactMap.put(this.id,this);
     }
 }

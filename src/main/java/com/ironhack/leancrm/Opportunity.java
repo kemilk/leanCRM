@@ -17,21 +17,18 @@ public class Opportunity {
     // Constructer
 
     public Opportunity(Integer quantity, Contact decisionMaker, Status status, Product product) {
-        setId(id);
         opportunityMap.put(this.getId(), this);
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
         setStatus(status);
         setProduct(product);
+        this.id = Utils.getNextId(opportunityMap);
     }
 
     // Getter and Setter
 
     public Integer getId() {
         return id;
-    }
-    public void setId(Integer id) {
-        this.id = Utils.getNextId(opportunityMap);
     }
 
     public Integer getQuantity() {
