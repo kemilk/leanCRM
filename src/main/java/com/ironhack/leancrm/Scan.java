@@ -219,16 +219,18 @@ public class Scan {
     // Scan methods for convertToOpportunity
 
     public static Integer getInfoForOpportunityQuantity(){
-        Integer oppInfoQuantity;
+        String oppInfoQuantity;
         while (true) {
             System.out.println("please enter the quantity of Trucks the Lead want to buy");
             Scanner input = new Scanner(System.in);
-            oppInfoQuantity = input.nextInt();
-            if (oppInfoQuantity > 0) {break;}
+            oppInfoQuantity = input.next();
+            if(oppInfoQuantity.matches("\\d+") && Integer.valueOf(oppInfoQuantity) > 0) {
+                break;
+            }
             else {System.out.println("Enter an valid number!");}
         }
         Scanner input = new Scanner(System.in);
-        return oppInfoQuantity;
+        return Integer.valueOf(oppInfoQuantity);
     }
 }
 
