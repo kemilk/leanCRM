@@ -33,7 +33,7 @@ class ContactTest {
 
     @Test
     void constructorWithExistingAccountAndExistingOpportunity() {
-        testContact3 = new Contact("Schulze", "040 56 12 89 65 23", "Schulze@zalando.de", testAccount1, testOpportunity1);
+        testContact3 = new Contact("Schulze", "040 56 12 89 65 23", "Schulze@zalando.de");
     }
 
     @Test
@@ -47,30 +47,30 @@ class ContactTest {
     @Test
     void constructorNewAccountAndNewOpportunity() {
         //(String name, String phoneNumber, String email, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct)
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("Maier", testContact1.getName());
     }
 
     @Test
     void getId() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals(0, testContact1.getId());
         assertNotEquals(5, testContact1.getId());
-        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de", 2, Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany",20, Status.OPEN, Product.HYBRID);
+        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de", Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany",20, Status.OPEN, Product.HYBRID);
         assertEquals(1, testContact1.getId());
         assertNotEquals(5, testContact1.getId());
     }
 
     @Test
     void getName() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("Maier", testContact1.getName());
         assertNotEquals("Schmidt", testContact1.getName());
     }
 
     @Test
     void setName() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("Maier", testContact1.getName());
         assertNotEquals("Schmidt", testContact1.getName());
         testContact1.setName("Schmidt");
@@ -80,14 +80,14 @@ class ContactTest {
 
     @Test
     void getPhoneNumber() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("+49 (0) 30 / 123 456 789", testContact1.getPhoneNumber());
         assertNotEquals("+49 (0) 30 / 123 456 112", testContact1.getPhoneNumber());
     }
 
     @Test
     void setPhoneNumber() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("+49 (0) 30 / 123 456 789", testContact1.getPhoneNumber());
         assertNotEquals("+49 (0) 30 / 123 456 112", testContact1.getPhoneNumber());
         testContact1.setPhoneNumber("+49 (0) 30 / 123 456 112");
@@ -97,14 +97,14 @@ class ContactTest {
 
     @Test
     void getEmail() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("maier@zalando.de", testContact1.getEmail());
         assertNotEquals("mayer@zalando.de", testContact1.getEmail());
     }
 
     @Test
     void setEmail() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         assertEquals("maier@zalando.de", testContact1.getEmail());
         assertNotEquals("mayer@zalando.de", testContact1.getEmail());
         testContact1.setEmail("mayer@zalando.de");
@@ -114,7 +114,7 @@ class ContactTest {
 
     @Test
     void getAccount() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         testAccount1 = testContact1.getAccount();
         assertEquals(testAccount1, testContact1.getAccount());
         assertNotEquals(testAccount2, testContact1.getAccount());
@@ -122,7 +122,7 @@ class ContactTest {
 
     @Test
     void setAccount() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
         testAccount1 = testContact1.getAccount();
         assertEquals(testAccount1, testContact1.getAccount());
         assertNotEquals(testAccount2, testContact1.getAccount());

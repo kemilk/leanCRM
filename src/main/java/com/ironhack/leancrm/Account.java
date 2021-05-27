@@ -17,25 +17,25 @@ public class Account {
 
     public static HashMap<Integer, Account> accountMap = new HashMap<>();
 
-    private static HashSet<Account> accountSet = new HashSet<Account>(); // ?????? need to be spoken about
+  //  private static HashSet<Account> accountSet = new HashSet<Account>(); // ?????? need to be spoken about -> Ist nun überflüssig, da eine accountMap hinzugefügt wurde.
 
-    public static void addAccount(Account account) {
-            accountSet.add(account);
-    }
-
-    public static void listAccounts() {
-        for (Account selected : Account.accountSet) {
-            System.out.println(selected);
-        }
-    }
-
-    public static HashSet<Account> getAccountSet() {
-        return accountSet;
-    }
-
-    protected static void clearAccountSet() {
-        Account.accountSet.clear();
-    }
+//    public static void addAccount(Account account) {
+//            accountSet.add(account);
+//    }
+//
+//    public static void listAccounts() {
+//        for (Account selected : Account.accountSet) {
+//            System.out.println(selected);
+//        }
+//    }
+//
+//    public static HashSet<Account> getAccountSet() {
+//        return accountSet;
+//    }
+//
+//    protected static void clearAccountSet() {
+//        Account.accountSet.clear();
+//    }
 
     public Account(Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity) {
         this.id = Utils.getNextId(accountMap);
@@ -48,7 +48,7 @@ public class Account {
         this.addContact(contact);
         this.opportunitySet = new HashSet<Opportunity>();
         this.addOpportunity(opportunity);
-        addAccount(this); //???
+  //      addAccount(this); //???
         accountMap.put(this.id,this);
     }
 

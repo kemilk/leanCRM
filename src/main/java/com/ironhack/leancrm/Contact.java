@@ -36,11 +36,11 @@ public class Contact {
         this.id = Utils.getNextId(contactMap);
     }
     //Constructor if Account is to create and Opportunity is known
-    public Contact(String name, String phoneNumber, String email, Integer opportunityID, Opportunity opportunity, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry) {
+    public Contact(String name, String phoneNumber, String email, Integer opportunityID, Opportunity opportunity, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.account = new Account(accountID, accountIndustry, accountEmployeeCount, accountCompanyName, accountCity, accountCountry, this, opportunity);
+        this.account = new Account(accountIndustry, accountEmployeeCount, accountCompanyName, accountCity, accountCountry, this, opportunity);
         this.opportunityMap.put(opportunityID, opportunity);
         this.id = Utils.getNextId(contactMap);
         contactMap.put(this.id,this);
@@ -53,13 +53,13 @@ public class Contact {
     }
 
     //Constructor if Account and Opportunity are to create
-    public Contact(String name, String phoneNumber, String email, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct) {
+    public Contact(String name, String phoneNumber, String email, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         Opportunity opportunity = new Opportunity(opportunityQuantity, this, opportunityStatus, opportunityProduct);
         this.opportunityMap.put(opportunity.getId(), opportunity);
-        this.account = new Account(accountID, accountIndustry, accountEmployeeCount, accountCompanyName, accountCity, accountCountry, this, opportunity);
+        this.account = new Account(accountIndustry, accountEmployeeCount, accountCompanyName, accountCity, accountCountry, this, opportunity);
         this.id = Utils.getNextId(contactMap);
 
 

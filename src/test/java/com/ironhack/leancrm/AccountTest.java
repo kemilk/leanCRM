@@ -20,28 +20,28 @@ class AccountTest {
 
     @BeforeEach
     void setUp() {
-        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", 1, Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
-        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de", 2, Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany",20, Status.OPEN, Product.HYBRID);
+        testContact1 = new Contact("Maier", "+49 (0) 30 / 123 456 789", "maier@zalando.de", Industry.ECOMMERCE, 15000, "Zalando", "Berlin", "Germany",10, Status.OPEN, Product.FLATBED);
+        testContact2 = new Contact("Simmer", "+49 (0) 331 / 987 654 321", "simmer@siemens.de", Industry.MANUFACTURING, 200000, "Siemens", "München", "Germany",20, Status.OPEN, Product.HYBRID);
         testAccount1 = testContact1.getAccount();
         testAccount2 = testContact2.getAccount();
         testOpportunity1 = testContact1.getOpportunityMap().get(0);
         testOpportunity1 = testContact1.getOpportunityMap().get(1);
     }
 
-    @AfterEach
-    void afterEach() {
-        Account.clearAccountSet();
-    }
-
-    @Test
-    void addAccount() {
-        assertEquals(new HashSet<>(Arrays.asList(testAccount1, testAccount2)), Account.getAccountSet());
-    }
-
-    @Test
-    void getAccountSet() {
-        assertEquals(new HashSet<>(Arrays.asList(testAccount1, testAccount2)), Account.getAccountSet());
-    }
+//    @AfterEach
+//    void afterEach() {
+//        Account.clearAccountSet();
+//    }
+//
+//    @Test
+//    void addAccount() {
+//        assertEquals(new HashSet<>(Arrays.asList(testAccount1, testAccount2)), Account.getAccountSet());
+//    }
+//
+//    @Test
+//    void getAccountSet() {
+//        assertEquals(new HashSet<>(Arrays.asList(testAccount1, testAccount2)), Account.getAccountSet());
+//    }
 
     @Test
     void getId() {
