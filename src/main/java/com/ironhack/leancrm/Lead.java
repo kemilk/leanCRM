@@ -15,6 +15,17 @@ public class Lead {
     private String companyName;
     private  static HashMap<Integer, Lead> leadMap = new HashMap<>();
 
+    @Override
+    public String toString() {
+        return "Lead [" +
+                " id: " + id +
+                " name: " + name + '\'' +
+                " phoneNumber: " + phoneNumber + '\'' +
+                " email: " + email + '\'' +
+                " companyName: " + companyName + '\'' +
+                ']';
+    }
+
     public Lead(String name, String phoneNumber, String email, String companyName) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -47,17 +58,19 @@ public class Lead {
         Contact createdContact = createContact(leadToConvert);
 
         Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
-        //Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
+        Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
 
-      //  Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);
+
+        Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);
 
         //industry, number of employees, city, and country
-        //Industry accInfoIndustry = Scan.getInfoForAccountIndustry();
-        //Integer accInfoEmployees = Scan.getInfoForAccountEmployees();
-        //String accInfoCity = Scan.getInfoForAccountCity();
-        //String accInfoCountry = Scan.getInfoForAccountCountry();
+        Industry accInfoIndustry = Scan.getInfoForAccountIndustry();
+        Integer accInfoEmployees = Scan.getInfoForAccountEmployees();
+        String accInfoCity = Scan.getInfoForAccountCity();
+        String accInfoCountry = Scan.getInfoForAccountCountry();
         Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
         createdContact.setAccount(createdAccount);
+
         //we have to remove the lead and to make everything clean again
         deleteLead(leadToConvert);
 
@@ -70,9 +83,8 @@ public class Lead {
 
     private static Contact createContact(Lead leadToConvert){
         return new Contact(leadToConvert.getName(),leadToConvert.getPhoneNumber(),leadToConvert.getEmail());
-//        return null;
     }
-//(Integer id, Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity)
+
     private static Account createAccount(Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity){
         return new Account(industry, employeeCount, companyName, city, country, contact, opportunity);
     }
