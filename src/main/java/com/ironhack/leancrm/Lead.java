@@ -46,7 +46,7 @@ public class Lead {
         // create new contact from lead info
         Contact createdContact = createContact(leadToConvert);
 
-        //Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
+        Integer oppInfoQuantity = Scan.getInfoForOpportunityQuantity();
         //Product oppInfoProduct = Scan.getInfoForOpportunityProduct();
 
       //  Opportunity createdOpportunity = createOpportunity(oppInfoQuantity, createdContact, oppInfoProduct);

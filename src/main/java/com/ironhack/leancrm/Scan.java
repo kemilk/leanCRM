@@ -216,6 +216,20 @@ public class Scan {
         System.out.println("\033[0m" + " ");
     }
 
+    // Scan methods for convertToOpportunity
+
+    public static Integer getInfoForOpportunityQuantity(){
+        Integer oppInfoQuantity;
+        while (true) {
+            System.out.println("please enter the quantity of Trucks the Lead want to buy");
+            Scanner input = new Scanner(System.in);
+            oppInfoQuantity = input.nextInt();
+            if (oppInfoQuantity > 0) {break;}
+            else {System.out.println("Enter an valid number!");}
+        }
+        Scanner input = new Scanner(System.in);
+        return oppInfoQuantity;
+    }
 }
 
 
