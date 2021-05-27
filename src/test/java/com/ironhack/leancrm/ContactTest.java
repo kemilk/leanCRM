@@ -13,10 +13,13 @@ class ContactTest {
 
     Contact testContact1;
     Contact testContact2;
+    Contact testContact3;
     Opportunity testOpportunity1;
     Opportunity testOpportunity2;
+    Opportunity testOpportunity3;
     Account testAccount1;
     Account testAccount2;
+    Account testAccount3;
 
     @BeforeEach
     void setUp() {
@@ -30,6 +33,7 @@ class ContactTest {
 
     @Test
     void constructorWithExistingAccountAndExistingOpportunity() {
+        testContact3 = new Contact("Schulze", "040 56 12 89 65 23", "Schulze@zalando.de", testAccount1, testOpportunity1);
     }
 
     @Test

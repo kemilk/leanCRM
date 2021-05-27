@@ -46,6 +46,12 @@ public class Contact {
         contactMap.put(this.id,this);
     }
 
+    public Contact(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
     //Constructor if Account and Opportunity are to create
     public Contact(String name, String phoneNumber, String email, Integer accountID, Industry accountIndustry, Integer accountEmployeeCount, String accountCompanyName, String accountCity, String accountCountry, Integer opportunityQuantity, Status opportunityStatus, Product opportunityProduct) {
         this.name = name;
@@ -55,6 +61,8 @@ public class Contact {
         this.opportunityMap.put(opportunity.getId(), opportunity);
         this.account = new Account(accountID, accountIndustry, accountEmployeeCount, accountCompanyName, accountCity, accountCountry, this, opportunity);
         this.id = Utils.getNextId(contactMap);
+
+
     }
 
     public Integer getId() {
