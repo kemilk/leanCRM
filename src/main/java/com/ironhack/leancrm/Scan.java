@@ -1,5 +1,7 @@
 package com.ironhack.leancrm;
 
+import com.ironhack.leancrm.common.Utils;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -34,13 +36,19 @@ public class Scan {
                 System.out.println("     close won id " + "\n");
                 System.out.println("To Leave the Program: ESC CRM ");
                 i = input.nextLine().toUpperCase();     //to make the user input case insensitive (all switch cases are UpperCase Letters)
-                String[] cmd = i.split(" ");
-                String cmd1 = cmd[0]+ " " +cmd[1];
-                Integer id = 0;
-                if(cmd.length >= 3) {id = Integer.valueOf(cmd[2]);}
+                //devide parts of command (cms and id if provided)
+                String cmd = Utils.removeNumeric(i);
+                Integer id = Utils.removeAlphabetic(i);
+                System.out.println("-----------------------------------> cmd: " + cmd);
+                System.out.println("-----------------------------------> id: " + id);
+
+//                String[] cmdArray = i.split(" ");
+//                String cmd = cmd[0]+ " " +cmd[1];
+//                Integer id = 0;
+//                if(cmd.length >= 3) {id = Integer.valueOf(cmd[2]);}
 
 
-                switch (cmd1) {
+                switch (cmd) {
                     case "NEW LEAD":
 
                         ArrayList<String> testListLead = new ArrayList<String>();
