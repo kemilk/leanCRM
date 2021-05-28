@@ -91,7 +91,7 @@ public class Scan {
                             for(Lead lead:Lead.showLeads()){
                                 System.out.println(lead.getId() + "/" + lead.getName());
                             }
-                        }else {System.out.println("no Leads in LeadList"); }
+                        }else {System.out.println("Sorry, there are no Leads in the Lead-List"); }
 
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
@@ -122,7 +122,7 @@ public class Scan {
                         try {
                             System.out.println(Lead.lookUpLead(id).toString());
                         } catch (NullPointerException e) {
-                            System.out.println("there is no Lead with this ID");
+                            System.out.println("\n" + ">>> Sorry, there is no Lead with this ID");
                         }
 
 
@@ -146,7 +146,7 @@ public class Scan {
 
                         if(Lead.lookUpLead(id) != null){
                             Lead.convertToOpportunity(id);
-                        }else {System.out.println("no Lead with this ID"); }
+                        }else {System.out.println("\n" + ">>> Sorry, there is no Lead with this ID"); }
 
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
@@ -166,7 +166,7 @@ public class Scan {
 
                     case "CLOSE-LOST":
                         Opportunity.opportunityMap.get(id).setStatus(Status.CLOSED_LOST);
-                        System.out.println(" the Opportunity with ID " + id + "was set to 'LOST'");
+                        System.out.println(">>> The Opportunity with ID " + id + "was set to 'LOST'");
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -185,7 +185,7 @@ public class Scan {
                     case "CLOSE-WON":
 
                         Opportunity.opportunityMap.get(id).setStatus(Status.CLOSED_WON);
-                        System.out.println(" the Opportunity with ID " + id + "was set to 'WON'");
+                        System.out.println(">>> The Opportunity with ID " + id + "was set to 'WON'");
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -205,7 +205,7 @@ public class Scan {
                         escProgram();
 
                     default:
-                        System.out.println("Bitte gib einen passenden Befehl ein!");
+                        System.out.println("Please enter a valid command!");
                         break;
                 }
 
