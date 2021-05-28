@@ -15,16 +15,7 @@ public class Lead {
     private String companyName;
     private  static HashMap<Integer, Lead> leadMap = new HashMap<>();
 
-    @Override
-    public String toString() {
-        return "Lead [" +
-                " id: " + id +
-                " name: " + name + '\'' +
-                " phoneNumber: " + phoneNumber + '\'' +
-                " email: " + email + '\'' +
-                " companyName: " + companyName + '\'' +
-                ']';
-    }
+
 
     public Lead(String name, String phoneNumber, String email, String companyName) {
         this.name = name;
@@ -133,3 +124,14 @@ public class Lead {
         return id;
     }
 }
+
+    @Override
+    public String toString() {
+        return "Lead [" +
+                " id: " + id +
+                " name: " + name + '\'' +
+                " phoneNumber: " + phoneNumber + '\'' +
+                " email: " + email + '\'' +
+                " companyName: " + companyName + '\'' +
+                ']';
+    }
