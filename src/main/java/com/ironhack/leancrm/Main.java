@@ -6,5 +6,6 @@ public class Main {
 
         //start lean-CRM
         Scan.inputScan();
+
     }
 }
