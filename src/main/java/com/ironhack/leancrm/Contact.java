@@ -50,6 +50,7 @@ public class Contact {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.id = Utils.getNextId(contactMap);
     }
 
     //Constructor if Account and Opportunity are to create
