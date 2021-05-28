@@ -51,33 +51,20 @@ public class Scan {
                 switch (cmd) {
                     case "NEW LEAD":
 
-                        ArrayList<String> testListLead = new ArrayList<String>();
-
                         System.out.println("\n" + " >>> Please confirm every input by pressing Enter <<< " + "\n");
 
                         System.out.println("Please type in the name of the Lead: ");
-                        String s = input.nextLine();
-                        testListLead.add(s);
+                        String name = input.nextLine();
                         System.out.println("Please type in the phone Number of the Lead: ");
-                        s = input.nextLine();
-                        testListLead.add(s);
+                        String number = input.nextLine();
                         System.out.println("Please type in the E-Mail address of the Lead: ");
-                        s = input.nextLine();
-                        testListLead.add(s);
+                        String email = input.nextLine();
                         System.out.println("Please type in the Company Name of the Lead: ");
-                        s = input.nextLine();
-                        testListLead.add(s);
+                        String companyName = input.nextLine();
 
-//                        System.out.println("Please type in..." +"\n" + "...the name of the Lead" +"\n" + "...the phone number of the Lead" + "\n" + "...the E-Mail address of the Lead" + "\n" + "...the Company Name of the Lead."+"\n"+"\n"+">>> Please confirm every single input by pressing Enter <<<");
+                        new Lead(name, number, email, companyName);
 
-//                        while (input.hasNextLine()){
-//                            String s = input.nextLine();
-//                            testListLead.add(s);
-//                            if (s.equals("")) break;
-//                        }
-
-                        System.out.println(testListLead);
-
+//                        System.out.println(Lead.showLeads());
 
                         System.out.println(("\n" + (char) 27 + "[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -91,15 +78,13 @@ public class Scan {
                             case "2":
                                 escProgram();
                         }
-//                            fileWriter to print in File
-//                            createID();
-//                            showLeads();
+
+
                         break;
+
                     case "SHOW LEADS":
                         System.out.println(" --- All the Leads in our System: --- ");
-                        for(Lead lead:Lead.showLeads()){
-                            System.out.println(lead.getId() + "/" + lead.getName());
-                        }
+
                         try {
                             loading();
                         } catch (InterruptedException e) {
@@ -107,6 +92,11 @@ public class Scan {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
+                        for(Lead lead:Lead.showLeads()){
+                            System.out.println(lead.getId() + "/" + lead.getName());
+                        }
+
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
                         System.out.println(commandLeave + (char) 27 + "\033[1m" + "(2)" + "\033[0m");
@@ -123,8 +113,7 @@ public class Scan {
                         break;
 
                     case "LOOKUP LEAD":      //"ID" has to be the corresponding Lead ID
-//                        System.out.println(" --- Please type in the Lead ID to get the corresponding Information --- ");
-                        System.out.println(Lead.lookUpLead(id).toString());
+
                         try {
                             loading();
                         } catch (InterruptedException e) {
@@ -132,6 +121,9 @@ public class Scan {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
+                        System.out.println(Lead.lookUpLead(id).toString());
+
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
                         System.out.println(commandLeave + (char) 27 + "\033[1m" + "(2)" + "\033[0m");
