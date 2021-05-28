@@ -17,25 +17,6 @@ public class Account {
 
     public static HashMap<Integer, Account> accountMap = new HashMap<>();
 
-  //  private static HashSet<Account> accountSet = new HashSet<Account>(); // ?????? need to be spoken about -> Ist nun überflüssig, da eine accountMap hinzugefügt wurde.
-
-//    public static void addAccount(Account account) {
-//            accountSet.add(account);
-//    }
-//
-//    public static void listAccounts() {
-//        for (Account selected : Account.accountSet) {
-//            System.out.println(selected);
-//        }
-//    }
-//
-//    public static HashSet<Account> getAccountSet() {
-//        return accountSet;
-//    }
-//
-//    protected static void clearAccountSet() {
-//        Account.accountSet.clear();
-//    }
 
     public Account(Industry industry, Integer employeeCount, String companyName, String city, String country, Contact contact, Opportunity opportunity) {
         this.id = Utils.getNextId(accountMap);
@@ -126,13 +107,11 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", industry=" + industry +
-                ", employeeCount=" + employeeCount +
-                ", companyName='" + companyName + '\'' +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return "Account with ID " + id +
+                "\n" + "Industry: " + industry +
+                "\n" + "EmployeeCount: " + employeeCount +
+                "\n" + "CompanyName: " + companyName +
+                "\n" + "City: " + city +
+                "\n" + "Country: " + country;
     }
 }

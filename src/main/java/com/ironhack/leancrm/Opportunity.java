@@ -62,13 +62,12 @@ public class Opportunity {
 
     @Override
     public String toString() {
-        return "Opportunity{" +
-                "id=" + id +
-                ", quantity=" + quantity +
-                ", decisionMaker=" + decisionMaker.getName() +
-                ", status=" + status +
-                ", product=" + product +
-                '}';
+        return "Opportunity with ID " + id +
+                "\n" + "Quantity: " + quantity +
+                "\n" + "DecisionMaker: " + decisionMaker.getName() +
+                "\n" + "Status: " + status +
+                "\n" + "Product: " + product +
+                "\n";
     }
 }
 
