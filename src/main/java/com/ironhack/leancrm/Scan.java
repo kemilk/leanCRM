@@ -31,21 +31,16 @@ public class Scan {
                 System.out.println("     New Lead ");
                 System.out.println("     Show Leads ");
                 System.out.println("     Lookup Lead id ");
-                System.out.println("     Convert from id ");
-                System.out.println("     close lost id ");
-                System.out.println("     close won id " + "\n");
+                System.out.println("     Convert id ");
+                System.out.println("     close-lost id ");
+                System.out.println("     close-won id " + "\n");
                 System.out.println("To Leave the Program: ESC CRM ");
                 i = input.nextLine().toUpperCase();     //to make the user input case insensitive (all switch cases are UpperCase Letters)
-                //devide parts of command (cms and id if provided)
-                String cmd = Utils.removeNumeric(i);
-                Integer id = Utils.removeAlphabetic(i);
-                System.out.println("-----------------------------------> cmd: " + cmd);
-                System.out.println("-----------------------------------> id: " + id);
 
-//                String[] cmdArray = i.split(" ");
-//                String cmd = cmd[0]+ " " +cmd[1];
-//                Integer id = 0;
-//                if(cmd.length >= 3) {id = Integer.valueOf(cmd[2]);}
+
+                String cmd = Utils.removeNumeric(i);    //devide parts of command (cms and id if provided)
+                Integer id = Utils.removeAlphabetic(i);
+
 
 
                 switch (cmd) {
@@ -62,9 +57,9 @@ public class Scan {
                         System.out.println("Please type in the Company Name of the Lead: ");
                         String companyName = input.nextLine();
 
-                        new Lead(name, number, email, companyName);
+                        Lead lead1 = new Lead (name, number, email, companyName);
+                        System.out.println("Lead " + name + " is created with id: " + lead1.getId());
 
-//                        System.out.println(Lead.showLeads());
 
                         System.out.println(("\n" + (char) 27 + "[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -78,8 +73,6 @@ public class Scan {
                             case "2":
                                 escProgram();
                         }
-
-
                         break;
 
                     case "SHOW LEADS":
@@ -93,9 +86,13 @@ public class Scan {
                             e.printStackTrace();
                         }
 
-                        for(Lead lead:Lead.showLeads()){
-                            System.out.println(lead.getId() + "/" + lead.getName());
-                        }
+
+                        if(Lead.showLeads().size() != 0){
+                            for(Lead lead:Lead.showLeads()){
+                                System.out.println(lead.getId() + "/" + lead.getName());
+                            }
+                        }else {System.out.println("no Leads in LeadList"); }
+
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -122,7 +119,12 @@ public class Scan {
                             e.printStackTrace();
                         }
 
-                        System.out.println(Lead.lookUpLead(id).toString());
+                        try {
+                            System.out.println(Lead.lookUpLead(id).toString());
+                        } catch (NullPointerException e) {
+                            System.out.println("there is no Lead with this ID");
+                        }
+
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -139,9 +141,13 @@ public class Scan {
                         }
                         break;
 
-                    case "CONVERT FROM":  //"ID" has to be the corresponding Lead ID
-//                        System.out.println(" --- Please type in the ID to convert the corresponding Lead into Opportunity --- ");
-                        Lead.convertToOpportunity(id);
+                    case "CONVERT":  //"ID" has to be the corresponding Lead ID
+
+
+                        if(Lead.lookUpLead(id) != null){
+                            Lead.convertToOpportunity(id);
+                        }else {System.out.println("no Lead with this ID"); }
+
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -158,9 +164,9 @@ public class Scan {
                         }
                         break;
 
-                    case "CLOSE LOST":
-//                        System.out.println(commandClose + " (Lost):");
+                    case "CLOSE-LOST":
                         Opportunity.opportunityMap.get(id).setStatus(Status.CLOSED_LOST);
+                        System.out.println(" the Opportunity with ID " + id + "was set to 'LOST'");
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");
@@ -176,9 +182,10 @@ public class Scan {
                         }
                         break;
 
-                    case "CLOSE WON":
-//                        System.out.println(commandClose + " (Won)");
+                    case "CLOSE-WON":
+
                         Opportunity.opportunityMap.get(id).setStatus(Status.CLOSED_WON);
+                        System.out.println(" the Opportunity with ID " + id + "was set to 'WON'");
 
                         System.out.println(("\n" + (char) 27 + "\u001b[47m" + commandNextStep + "\033[0m" + "\n"));
                         System.out.println(commandGoOn + (char) 27 + "\033[1m" + "(1)" + "\033[0m");

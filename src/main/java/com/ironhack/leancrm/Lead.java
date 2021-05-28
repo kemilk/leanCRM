@@ -48,7 +48,7 @@ public class Lead {
     }
 
     public static Lead lookUpLead(Integer leadId) {
-        return leadMap.get(leadId);
+            return leadMap.get(leadId);
     }
 
     public static void convertToOpportunity(Integer leadId) {
@@ -68,11 +68,13 @@ public class Lead {
         Integer accInfoEmployees = Scan.getInfoForAccountEmployees();
         String accInfoCity = Scan.getInfoForAccountCity();
         String accInfoCountry = Scan.getInfoForAccountCountry();
- //       Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
-  //      createdContact.setAccount(createdAccount);
+        Account createdAccount = createAccount(accInfoIndustry, accInfoEmployees, leadToConvert.getCompanyName(), accInfoCity, accInfoCountry, createdContact, createdOpportunity);
+        createdContact.setAccount(createdAccount);
 
         //we have to remove the lead and to make everything clean again
         deleteLead(leadToConvert);
+        System.out.println(createdOpportunity.toString());
+        System.out.println(createdAccount.toString());
 
     }
 

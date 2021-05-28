@@ -123,4 +123,16 @@ public class Account {
     public void addOpportunity(Opportunity opportunity) {
         this.opportunitySet.add(opportunity);
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", industry=" + industry +
+                ", employeeCount=" + employeeCount +
+                ", companyName='" + companyName + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

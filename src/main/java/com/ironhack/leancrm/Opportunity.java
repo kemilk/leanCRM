@@ -58,5 +58,17 @@ public class Opportunity {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+
+    @Override
+    public String toString() {
+        return "Opportunity{" +
+                "id=" + id +
+                ", quantity=" + quantity +
+                ", decisionMaker=" + decisionMaker.getName() +
+                ", status=" + status +
+                ", product=" + product +
+                '}';
+    }
 }
 
