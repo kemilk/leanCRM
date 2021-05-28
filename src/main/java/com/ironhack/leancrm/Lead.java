@@ -123,7 +123,6 @@ public class Lead {
     public Integer getId() {
         return id;
     }
-}
 
     @Override
     public String toString() {
@@ -135,3 +134,7 @@ public class Lead {
                 " companyName: " + companyName + '\'' +
                 ']';
     }
+
+}
+
+
